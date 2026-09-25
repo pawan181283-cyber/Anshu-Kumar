@@ -116,13 +116,13 @@ GEMINI_RETRY_JITTER_SECONDS = 1.0  # up to +1s random jitter, avoids thundering-
 # against this budget, tracked per calendar day (UTC) in SQLite so it
 # survives restarts. Set this comfortably below your real daily quota —
 # free tier is commonly ~20/day per model; with up to 4 candidate models
-# in the list above, 40 is a conservative shared budget. Tune to match
+# in the list above, 100 is a conservative shared budget. Tune to match
 # whatever ai.google.dev/gemini-api/docs/rate-limits shows for your key.
 # ----------------------------------------------------------------------
-GEMINI_DAILY_CALL_BUDGET = 40
+GEMINI_DAILY_CALL_BUDGET = 100
 
 # Minimum number of items *evaluated* (decisively — success or genuine
-# IGNORE, not failures) per cycle, even when 40/24-style even-spread math
+# IGNORE, not failures) per cycle, even when 100/24-style even-spread math
 # would round down to 1 and leave a whole hour vulnerable to a single
 # transient 503 eating the entire cycle. The daily budget check remains
 # the hard safety ceiling regardless of this value — raising it only
