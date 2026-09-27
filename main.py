@@ -97,7 +97,7 @@ MODEL_NAME = None  # resolved at startup by resolve_gemini_model()
 # How often the bot scans RSS feeds. This alone does NOT cap Gemini usage —
 # a single busy cycle can still contain many fresh headlines. It's paired
 # with GEMINI_DAILY_CALL_BUDGET below, which is the actual quota guardrail.
-CHECK_INTERVAL_SECONDS = 900  # 15 minutes — matches Zerodha Pulse's near-real-time updates.
+CHECK_INTERVAL_SECONDS = 3600  # 15 minutes — matches Zerodha Pulse's near-real-time updates.
 REQUEST_TIMEOUT = 20
 
 # Retry settings for transient Gemini errors (503 UNAVAILABLE, 429 rate
